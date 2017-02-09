@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Security_hw01_passwordAttacker.iml" filepath="$PROJECT_DIR$/Security_hw01_passwordAttacker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/security_hw01_passwordattacker.iml" filepath="$PROJECT_DIR$/security_hw01_passwordattacker.iml" />
     </modules>
   </component>
 </project>
