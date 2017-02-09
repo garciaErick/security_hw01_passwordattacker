@@ -7,5 +7,6 @@ public class Main {
 		PasswordRetriever passwordRetriever = new PasswordRetriever();
 		String[][] saltedPasswords = passwordRetriever.getSaltedPasswords();
 		String[][] randomPasswords = passwordRetriever.getRandomPasswords();
+		System.out.println(hey);
 	}
 }
