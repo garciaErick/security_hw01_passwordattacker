@@ -12,10 +12,12 @@ public class Main {
 		DictionaryAttacker dictionaryAttacker = new DictionaryAttacker(saltedPasswords, dictionary);
 		BruteForceAttacker bruteForceAttacker = new BruteForceAttacker(randomPasswords, dictionary);
 
-//		System.out.println("Dictionary Attack");
-//		dictionaryAttacker.attack();
-//		System.out.println();
+		System.out.println("Dictionary Attack");
+		dictionaryAttacker.attack();
+		System.out.println();
+
 		System.out.println("Brute Force Attack");
 		bruteForceAttacker.attack();
+		System.out.println();
 	}
 }

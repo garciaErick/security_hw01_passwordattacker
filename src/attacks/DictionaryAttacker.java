@@ -2,13 +2,13 @@ package attacks;
 
 import java.util.ArrayList;
 
-public class DictionaryAttacker extends Attacker {
+class DictionaryAttacker extends Attacker {
 
-	public DictionaryAttacker(String[][] passwords, ArrayList<String> dictionary) {
+	DictionaryAttacker(String[][] passwords, ArrayList<String> dictionary) {
 		super(passwords, dictionary);
 	}
 
-	public void attack() throws Exception {
+	void attack() throws Exception {
 		for (String[] password : passwords) {
 			for (String word : dictionary) {
 				String salt = password[1];

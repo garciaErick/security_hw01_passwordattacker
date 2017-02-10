@@ -5,12 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class FileRetriever {
+class FileRetriever {
 	private String[][] randomPasswords;
 	private String[][] saltedPasswords;
 	private ArrayList<String> dictionary;
 
-	public FileRetriever() {
+	FileRetriever() {
 		randomPasswords = new String[10][2];
 		saltedPasswords = new String[10][3];
 		dictionary = new ArrayList<>();
@@ -30,17 +30,17 @@ public class FileRetriever {
 		return arr;
 	}
 
-	public String[][] getRandomPasswords() throws IOException {
+	String[][] getRandomPasswords() throws IOException {
 		String fileName = "src/resources/3NSMnXOKH2@.txt";
 		return getPasswords(fileName, randomPasswords);
 	}
 
-	public String[][] getSaltedPasswords() throws IOException {
+	String[][] getSaltedPasswords() throws IOException {
 		String fileName = "src/resources/3NSMnXOKH2.txt";
 		return getPasswords(fileName, saltedPasswords);
 	}
 
-	public ArrayList<String> getDictionary() throws IOException{
+	ArrayList<String> getDictionary() throws IOException{
 		FileReader in = new FileReader("src/resources/wordsEn.txt");
 		BufferedReader br = new BufferedReader(in);
 		String line;
