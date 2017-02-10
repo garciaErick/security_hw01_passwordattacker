@@ -11,6 +11,7 @@ public class Main {
 
 		DictionaryAttacker dictionaryAttacker = new DictionaryAttacker(saltedPasswords, dictionary);
 
+		System.out.println("test");
 		dictionaryAttacker.attack();
 	}
 }
