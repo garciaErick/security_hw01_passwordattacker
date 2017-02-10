@@ -16,9 +16,6 @@ public class Main {
 //		dictionaryAttacker.attack();
 //		System.out.println();
 		System.out.println("Brute Force Attack");
-		bruteForceAttacker.possibleCombinations(2, "");
-//		bruteForceAttacker.possibleCombinations(3, "");
-
-//		bruteForceAttacker.getBaseString(1, "");
+		bruteForceAttacker.attack();
 	}
 }

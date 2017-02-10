@@ -8,7 +8,7 @@ public class DictionaryAttacker extends Attacker {
 		super(passwords, dictionary);
 	}
 
-	public void attack() throws Exception{
+	public void attack() throws Exception {
 		for (String[] password : passwords) {
 			for (String word : dictionary) {
 				String salt = password[1];
