@@ -10,7 +10,7 @@ public class Sha1Generator {
 	public Sha1Generator() {
 	}
 
-	public String getSha1(String toHash) throws Exception {
+	public String getHash(String toHash) throws Exception {
 		MessageDigest hash = MessageDigest.getInstance("SHA1");
 		hash.update(toHash.getBytes());
 		byte[] digest = hash.digest();
