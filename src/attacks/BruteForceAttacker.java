@@ -5,7 +5,6 @@ import java.util.ArrayList;
 class BruteForceAttacker extends Attacker {
 	private final char[] possibleCharacters = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890-_".toCharArray();
 	private ArrayList<String> currentCombination;
-	private final long startTime = System.currentTimeMillis();
 
 	BruteForceAttacker(String[][] passwords, ArrayList<String> dictionary) {
 		super(passwords, dictionary);
@@ -16,10 +15,10 @@ class BruteForceAttacker extends Attacker {
 		for (char possibleCharacter : possibleCharacters) {
 			String passwordGuess = String.valueOf(possibleCharacter);
 			currentCombination.add(passwordGuess);
-			for (String[] password : passwords) validatePassword(password, passwordGuess);
+			for (String[] password : userInfo) validatePassword(password[0], password[1], passwordGuess, "");
 		}
 
-		for (int i = 0; i < 9; i++) verifyCurrentCombination();
+		for (int i = 0; i < 3; i++) verifyCurrentCombination();
 	}
 
 	private void verifyCurrentCombination() throws Exception {
@@ -28,17 +27,14 @@ class BruteForceAttacker extends Attacker {
 			for (String combination : currentCombination) {
 				combination += possibleCharacter;
 				temp.add(combination);
-				for (String[] password : passwords) validatePassword(password, combination);
+				for (String[] password : userInfo) validatePassword(password[0], password[1], combination, "");
 			}
-		currentCombination = temp;
+		currentCombination.clear();
+		currentCombination.trimToSize();
+		currentCombination = new ArrayList<>(temp);
+		temp.clear();
+		temp.trimToSize();
 	}
 
-	private void validatePassword(String[] password, String passwordGuess) throws Exception {
-		String hash = sha1.getHash(passwordGuess);
-		if (password[1].equals(hash)) {
-			System.out.println(password[0] + ": " + passwordGuess);
-			long estimatedTime = System.currentTimeMillis() - startTime;
-			System.out.println("Time Elapsed: " + estimatedTime);
-		}
-	}
+
 }

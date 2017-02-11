@@ -9,14 +9,11 @@ class DictionaryAttacker extends Attacker {
 	}
 
 	void attack() throws Exception {
-		for (String[] password : passwords) {
-			for (String word : dictionary) {
-				String salt = password[1];
-				String hash = sha1.getHash(word + salt);
-				if (password[2].equals(hash)) {
-					System.out.println(password[0] + ": " + word);
-				}
+		for (String[] row : userInfo)
+			for (String passwordGuess : dictionary) {
+				String user = row[0], salt = row[1], password = row[2];
+				validatePassword(user, password, passwordGuess, salt);
 			}
-		}
 	}
 }
+
