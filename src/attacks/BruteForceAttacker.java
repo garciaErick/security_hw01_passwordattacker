@@ -25,7 +25,7 @@ class BruteForceAttacker extends Attacker {
 		ArrayList<String> temp = new ArrayList<>();
 		for (char possibleCharacter : possibleCharacters)
 			for (String combination : currentCombination) {
-				System.out.println(combination);
+				combination += possibleCharacter;
 				temp.add(combination);
 				for (String[] password : userInfo) validatePassword(password[0], password[1], combination, "");
 			}
@@ -35,6 +35,4 @@ class BruteForceAttacker extends Attacker {
 		temp.clear();
 		temp.trimToSize();
 	}
-
-
 }
