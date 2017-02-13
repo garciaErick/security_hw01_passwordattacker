@@ -18,14 +18,14 @@ class BruteForceAttacker extends Attacker {
 			for (String[] password : userInfo) validatePassword(password[0], password[1], passwordGuess, "");
 		}
 
-		for (int i = 0; i < 3; i++) verifyCurrentCombination();
+		for (int i = 0; i < 7; i++) verifyCurrentCombination();
 	}
 
 	private void verifyCurrentCombination() throws Exception {
 		ArrayList<String> temp = new ArrayList<>();
 		for (char possibleCharacter : possibleCharacters)
 			for (String combination : currentCombination) {
-				combination += possibleCharacter;
+				System.out.println(combination);
 				temp.add(combination);
 				for (String[] password : userInfo) validatePassword(password[0], password[1], combination, "");
 			}
